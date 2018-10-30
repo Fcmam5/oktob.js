@@ -33,8 +33,13 @@
 
 ## الواجهة البرمجية (API)
 
-* `replaceEnCharsQWERTY(text)` تحويل النص من الإنجليزية إلى العربية حسب تخطيط **QWERTY**
-* `replaceArCharsQWERTY(text)` تحويل النص من العربية إلى الإنجليزية حسب تخطيط **QWERTY**
+* QWERTY
+    * `replaceEnCharsQWERTY(text)` تحويل النص من الإنجليزية إلى العربية حسب تخطيط كويرتي
+    * `replaceArCharsQWERTY(text)` تحويل النص من العربية إلى الإنجليزية حسب تخطيط كويرتي
+
+* API
+    * `getKbLayout()` تُرتجع اسم تخطيط لوحة المفاتيح حسب الإعدادات الحالية
+    * `setKbLayout(kbLayoutName)` تعديل الإعدادات بتمرير تخطيط لوحة مفاتيح جديد (من بين التخطيطات التي تدعمها المكتبة)
 
 ## License
 

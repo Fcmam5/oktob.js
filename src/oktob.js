@@ -6,6 +6,7 @@
       kbLayout: 'qwerty',
       convertDigits: true,
     },
+    supportedKeyboardLayouts: ['qwerty', 'azerty']
   }
   /**
    * Instantiate Oktob library
@@ -19,6 +20,8 @@
   }
 
   Oktob.prototype = {
+
+    // QWERTY Keyboards
     /**
      * Replace English charecters (from English to Arabic)
      * @author Ahmed Sammour (https://github.com/ASammour/DidYouMeanJS)
@@ -188,6 +191,19 @@
       }
 
       return text;
+    },
+
+    // API
+    getKbLayout: function () {
+      return this.kbLayout;
+    },
+    setKbLayout: function (kbl) {
+      var kbLayout = String(kbl).toLocaleLowerCase();
+      if (defaults.supportedKeyboardLayouts.indexOf(kbLayout) > -1) {
+        this.kbLayout = kbLayout;
+      } else {
+        console.error('Please set a valid keyboard layout');
+      }
     }
   };
 
@@ -195,8 +211,19 @@
     var self = this;
     var con = config || defaults.config
     self.mode = con.mode || defaults.config.mode;
-    self.kbLayout = con.kbLayout || defaults.config.kbLayout;
     self.convertDigits = con.convertDigits || defaults.config.convertDigits;
+
+    // If no kbLayout is provided, choose the deault one, if not check if it's a valid keybaord layout
+    if (config.kbLayout && defaults.supportedKeyboardLayouts.indexOf(config.kbLayout) > -1) {
+      self.kbLayout = con.kbLayout; // A keyboard layout is given, and it's in the supported keyboard layouts
+    } else {
+      // The given kyboard layout is not valid
+      if (config.kbLayout) {
+        console.error('Please provide a valid keyboard layout, between: [' + defaults.supportedKeyboardLayouts + ']');
+      } else {
+        self.kbLayout = defaults.config.kbLayout;
+      }
+    }
   };
 
   Oktob.init.prototype = Oktob.prototype;
@@ -211,7 +238,8 @@
 
   /* start-test-block */
   Oktob._api = {
-    getDefaults: defaults,
+    defaultConfig: defaults.config,
+    supportedKeyboardLayouts: defaults.supportedKeyboardLayouts,
   }
   /* end-test-block */
 
