@@ -192,6 +192,161 @@
 
       return text;
     },
+    /**
+     * Replace AZERTY
+     */
+    replaceEnCharsAZERTY: function (txt) {
+      var text = txt || '';
+      text = text.replace(/a/g, 'ض');
+      text = text.replace(/A/g, 'َ');
+      text = text.replace(/z/g, 'ص');
+      text = text.replace(/Z/g, 'ً');
+      text = text.replace(/e/g, 'ث');
+      text = text.replace(/E/g, 'ُ');
+      text = text.replace(/r/g, "ق");
+      text = text.replace(/R/g, "ٌ");
+      text = text.replace(/t/g, "ف");
+      text = text.replace(/T/g, "لإ");
+      text = text.replace(/y/g, "غ");
+      text = text.replace(/Y/g, "إ");
+      text = text.replace(/u/g, "ع");
+      text = text.replace(/U/g, "‘");
+      text = text.replace(/i/g, "ه");
+      text = text.replace(/I/g, "÷");
+      text = text.replace(/o/g, "خ");
+      text = text.replace(/O/g, "×");
+      text = text.replace(/p/g, "ح");
+      text = text.replace(/P/g, "؛");
+      text = text.replace(/\^/g, "ج");
+      text = text.replace(/\$/g, "د");
+      text = text.replace(/q/g, "ش");
+      text = text.replace(/Q/g, "ِ");
+      text = text.replace(/s/g, "س");
+      text = text.replace(/S/g, "ٍ");
+      text = text.replace(/d/g, "ي");
+      text = text.replace(/D/g, "]");
+      text = text.replace(/f/g, "ب");
+      text = text.replace(/F/g, "[");
+      text = text.replace(/g/g, "ل");
+      text = text.replace(/G/g, "لأ");
+      text = text.replace(/h/g, "ا");
+      text = text.replace(/H/g, "أ");
+      text = text.replace(/j/g, "ت");
+      text = text.replace(/J/g, "ـ");
+      text = text.replace(/k/g, "ن");
+      text = text.replace(/K/g, "،");
+      text = text.replace(/l/g, "م");
+      text = text.replace(/L/g, "/");
+      text = text.replace(/m/g, "ك");
+      text = text.replace(/M/g, ":");
+      text = text.replace(/ù/g, "ط");
+      text = text.replace(/\\/g, "*");
+
+      text = text.replace(/w/g, "ئ");
+      text = text.replace(/W/g, "~");
+      text = text.replace(/x/g, "ء");
+      text = text.replace(/X/g, "ْ");
+      text = text.replace(/c/g, "ؤ");
+      text = text.replace(/C/g, "}");
+      text = text.replace(/v/g, "ر");
+      text = text.replace(/V/g, "{");
+      text = text.replace(/b/g, "لا");
+      text = text.replace(/B/g, "لآ");
+      text = text.replace(/n/g, "ى");
+      text = text.replace(/N/g, "آ");
+      text = text.replace(/,/g, "ة");
+      text = text.replace(/;/g, "و");
+      text = text.replace(/\?/g, "'");
+      text = text.replace(/./g, ",");
+      text = text.replace(/:/g, "ز");
+      text = text.replace(/\//g, ".");
+      text = text.replace(/!/g, "ظ");
+      text = text.replace(/§/g, "؟");
+      return text;
+    },
+    replaceArCharsAZERTY: function (txt) {
+      var text = txt || '';
+      text = text.replace(/ض/g, 'a');
+      text = text.replace(/َ/g, 'A');
+      text = text.replace(/ص/g, 'z');
+      text = text.replace(/ً/g, 'Z');
+      text = text.replace(/ث/g, 'e');
+      text = text.replace(/ُ/g, 'E');
+      text = text.replace(/ق/g, "r");
+      text = text.replace(/ٌ/g, "R");
+      text = text.replace(/ف/g, "t");
+      text = text.replace(/لإ/g, "T");
+      text = text.replace(/غ/g, "y");
+      text = text.replace(/إ/g, "Y");
+      text = text.replace(/ع/g, "u");
+      text = text.replace(/‘/g, "U");
+      text = text.replace(/ه/g, "i");
+      text = text.replace(/÷/g, "I");
+      text = text.replace(/خ/g, "o");
+      text = text.replace(/×/g, "O");
+      text = text.replace(/ح/g, "p");
+      text = text.replace(/؛/g, "P");
+      text = text.replace(/ج/g, "\^");
+      text = text.replace(/د/g, "\$");
+      text = text.replace(/ش/g, "q");
+      text = text.replace(/ِ/g, "Q");
+      text = text.replace(/س/g, "s");
+      text = text.replace(/ٍ/g, "S");
+      text = text.replace(/ي/g, "d");
+      text = text.replace(/\]/g, "D");
+      text = text.replace(/ب/g, "f");
+      text = text.replace(/\[/g, "F");
+      text = text.replace(/ل/g, "g");
+      text = text.replace(/لأ/g, "G");
+      text = text.replace(/ا/g, "h");
+      text = text.replace(/أ/g, "H");
+      text = text.replace(/ت/g, "j");
+      text = text.replace(/ـ/g, "J");
+      text = text.replace(/ن/g, "k");
+      text = text.replace(/،/g, "K");
+      text = text.replace(/م/g, "l");
+      text = text.replace(/\//g, "L");
+      text = text.replace(/ك/g, "m");
+      text = text.replace(/:/g, "M");
+      text = text.replace(/ط/g, "ù");
+      text = text.replace(/\\/g, "*");
+
+      text = text.replace(/ئ/g, "w");
+      text = text.replace(/~/g, "W");
+      text = text.replace(/ء/g, "x");
+      text = text.replace(/ْ/g, "X");
+      text = text.replace(/ؤ/g, "c");
+      text = text.replace(/}/g, "C");
+      text = text.replace(/ر/g, "v");
+      text = text.replace(/{/g, "V");
+      text = text.replace(/ﻻ/g, "b");
+      text = text.replace(/لآ/g, "B");
+      text = text.replace(/ى/g, "n");
+      text = text.replace(/آ/g, "N");
+      text = text.replace(/ة/g, ",");
+      text = text.replace(/ة/g, ",");
+      text = text.replace(/'/g, "?");
+      text = text.replace(/و/g, ";");
+      text = text.replace(/,/g, ".");
+      text = text.replace(/ز/g, ":");
+      text = text.replace(/\//g, ".");
+      text = text.replace(/ظ/g, "!");
+      text = text.replace(/؟/g, "§");
+
+      if (this.convertDigits) {
+        text = text.replace(/٠/gi, '0');
+        text = text.replace(/١/gi, '1');
+        text = text.replace(/٢/gi, '2');
+        text = text.replace(/٣/gi, '3');
+        text = text.replace(/٤/gi, '4');
+        text = text.replace(/٥/gi, '5');
+        text = text.replace(/٦/gi, '6');
+        text = text.replace(/٧/gi, '7');
+        text = text.replace(/٨/gi, '8');
+        text = text.replace(/٩/gi, '9');
+      }
+      return text;
+    },
 
     // API
     getKbLayout: function () {
