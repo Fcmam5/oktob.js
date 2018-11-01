@@ -50,7 +50,7 @@
       text = text.replace(/p/g, "ح");
       text = text.replace(/P/g, "؛");
       text = text.replace(/\[/g, "ج");
-      text = text.replace(/{/g, "<");
+      text = text.replace(/\{/g, "<");
       text = text.replace(/]/g, "د");
       text = text.replace(/\}/g, ">");
 
@@ -74,7 +74,7 @@
       text = text.replace(/L/g, "/");
       text = text.replace(/;/g, "ك");
       text = text.replace(/:/g, ":");
-      text = text.replace(/'/g, "ط");
+      text = text.replace(/\'/g, "ط");
       text = text.replace(/"/g, "\"");
 
       text = text.replace(/`/g, "ذ");
@@ -171,7 +171,7 @@
       text = text.replace(/ر/gi, 'v');
       text = text.replace(/\{/gi, 'V');
       text = text.replace(/ؤ/gi, 'c');
-      text = text.replace(/}/gi, 'C');
+      text = text.replace(/\}/gi, 'C');
       text = text.replace(/ء/gi, 'x');
       text = text.replace(/ْ/gi, 'X');
       text = text.replace(/ئ/gi, 'z');
@@ -218,6 +218,7 @@
       text = text.replace(/p/g, "ح");
       text = text.replace(/P/g, "؛");
       text = text.replace(/\^/g, "ج");
+      text = text.replace(/\¨/g, "<");
       text = text.replace(/\$/g, "د");
       text = text.replace(/q/g, "ش");
       text = text.replace(/Q/g, "ِ");
@@ -254,13 +255,13 @@
       text = text.replace(/B/g, "لآ");
       text = text.replace(/n/g, "ى");
       text = text.replace(/N/g, "آ");
-      text = text.replace(/,/g, "ة");
+      text = text.replace(/\,/g, "ة");
       text = text.replace(/;/g, "و");
       text = text.replace(/\?/g, "'");
-      text = text.replace(/./g, ",");
+      text = text.replace(/\./g, ",");
       text = text.replace(/:/g, "ز");
       text = text.replace(/\//g, ".");
-      text = text.replace(/!/g, "ظ");
+      text = text.replace(/\!/g, "ظ");
       text = text.replace(/§/g, "؟");
       return text;
     },
@@ -287,6 +288,7 @@
       text = text.replace(/ح/g, "p");
       text = text.replace(/؛/g, "P");
       text = text.replace(/ج/g, "\^");
+      text = text.replace(/\</g, "¨");
       text = text.replace(/د/g, "\$");
       text = text.replace(/ش/g, "q");
       text = text.replace(/ِ/g, "Q");
@@ -316,18 +318,17 @@
       text = text.replace(/ء/g, "x");
       text = text.replace(/ْ/g, "X");
       text = text.replace(/ؤ/g, "c");
-      text = text.replace(/}/g, "C");
+      text = text.replace(/\}/g, "C");
       text = text.replace(/ر/g, "v");
-      text = text.replace(/{/g, "V");
+      text = text.replace(/\{/g, "V");
       text = text.replace(/ﻻ/g, "b");
       text = text.replace(/لآ/g, "B");
       text = text.replace(/ى/g, "n");
       text = text.replace(/آ/g, "N");
       text = text.replace(/ة/g, ",");
-      text = text.replace(/ة/g, ",");
-      text = text.replace(/'/g, "?");
+      text = text.replace(/\'/g, "?");
       text = text.replace(/و/g, ";");
-      text = text.replace(/,/g, ".");
+      text = text.replace(/\,/g, ".");
       text = text.replace(/ز/g, ":");
       text = text.replace(/\//g, ".");
       text = text.replace(/ظ/g, "!");
@@ -369,11 +370,11 @@
     self.convertDigits = con.convertDigits || defaults.config.convertDigits;
 
     // If no kbLayout is provided, choose the deault one, if not check if it's a valid keybaord layout
-    if (config.kbLayout && defaults.supportedKeyboardLayouts.indexOf(config.kbLayout) > -1) {
+    if (config && config.kbLayout && defaults.supportedKeyboardLayouts.indexOf(config.kbLayout) > -1) {
       self.kbLayout = con.kbLayout; // A keyboard layout is given, and it's in the supported keyboard layouts
     } else {
       // The given kyboard layout is not valid
-      if (config.kbLayout) {
+      if (config && config.kbLayout) {
         console.error('Please provide a valid keyboard layout, between: [' + defaults.supportedKeyboardLayouts + ']');
       } else {
         self.kbLayout = defaults.config.kbLayout;

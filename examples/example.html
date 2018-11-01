@@ -5,10 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Oktob Example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .arabic-input .ar-text {
+            direction: rtl;
+        }
+    </style>
 </head>
 <body>
     <h1>Hello World</h1>
-    <p>Open the Console and start testing Oktob object</p>
+    <p>Open the Console and start testing Oktob object, or try it here:</p>
+    
+    <div class="arabic-input">
+        <label for="ar-text">أكتب شيئا ما بالعربيّة</label>
+        <input type="text" name="ar-text" id="ar-input">
+
+        <br>
+        <p class="ans">Do you mean <span id="en-text"></span></p>
+    </div>
     <script src="../src/oktob.js"></script>
+    <script>
+        var Oktob = Oktob();
+        var arInput = document.getElementById('ar-input');
+        var enText = document.getElementById('en-text');
+
+        arInput.addEventListener('keyup', function(e) {
+            enText.innerHTML = Oktob.replaceArCharsAZERTY(e.target.value);
+        });
+        
+    </script>
 </body>
 </html>
