@@ -21,6 +21,38 @@
 
   Oktob.prototype = {
 
+    /**
+     * this method after debugging can do a dynamic replacement of text, it gets the format content from an external file,
+     * this way we separate data from code which can make it easy to improve and upgrade and easier to add more keyboard formats.
+     * 
+     * @author Ali Aouf 
+     * @param {String} txt 
+     * @param {String} method 
+     * @returns {String} treated text
+     */
+    dynamicReplace: function (txt, method) {
+
+      var format = require(__dirname + '../data/' + method + '.json');
+
+      if (data != null) {
+
+        var text = txt || '';
+
+        for (var key in format) {
+          // skip loop if the property is from prototype
+
+          if (!validation_messages.hasOwnProperty(key)) continue;
+
+          text = text.replace(key, format[key]);
+        }
+        return text;
+      } else {
+        console.log("error. file empty or not found");
+
+        return null;
+      }
+    },
+
     // QWERTY Keyboards
     /**
      * Replace English charecters (from English to Arabic)
