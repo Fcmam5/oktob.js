@@ -41,7 +41,7 @@
         for (var key in format) {
           // skip loop if the property is from prototype
 
-          if (!validation_messages.hasOwnProperty(key)) continue;
+          if (!format.hasOwnProperty(key)) continue;
 
           text = text.replace(key, format[key]);
         }
