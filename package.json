@@ -1,6 +1,6 @@
 {
   "name": "oktob.js",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Replace keyboard entries with Arabic letters, and vice-versa",
   "main": "src/oktob.js",
   "directories": {
