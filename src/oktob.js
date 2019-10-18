@@ -23,7 +23,7 @@
 
     // QWERTY Keyboards
     /**
-     * Replace English charecters (from English to Arabic)
+     * Replace English characters (from English to Arabic)
      * @author Ahmed Sammour (https://github.com/ASammour/DidYouMeanJS)
      * @param {String} txt 
      */
@@ -103,7 +103,7 @@
       return text;
     },
     /**
-     * Replace Arabic charecters (from Arabic to English)
+     * Replace Arabic characters (from Arabic to English)
      * @author Ahmed Sammour (https://github.com/ASammour/DidYouMeanJS)
      * @param {String} txt 
      */
@@ -384,7 +384,7 @@
 
   Oktob.init.prototype = Oktob.prototype;
 
-  // Check if it is CommonJS a environments (example: Node)
+  // Check if it's CommonJS environments (example: Node)
   if (typeof module === 'object' && module.exports) {
     module.exports = Oktob;
   } else {
